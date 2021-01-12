@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:test_user) { User.create(username: 'Tadeu', full_name: 'Tadeu Sarro') }
+  let(:test_user) { User.create(username: 'Tadeu', full_name: 'karthy') }
   let(:subject) { described_class.new(text: 'This is the text.', author_id: test_user.id) }
 
   describe 'validations' do

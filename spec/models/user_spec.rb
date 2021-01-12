@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   let(:subject) do
     described_class.new(
       username: 'Tadeu',
-      full_name: 'Tadeu Sarro',
+      full_name: 'karthy',
       photo: 'https://photo.url.com',
       cover_image: 'https://coverimage.url.com'
     )
