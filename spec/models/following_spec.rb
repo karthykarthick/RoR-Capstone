@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Following, type: :model do
-  let(:test_follower) { User.create(username: 'Tadeu', full_name: 'Tadeu Sarro') }
+  let(:test_follower) { User.create(username: 'Tadeu', full_name: 'karthy') }
   let(:test_followed) { User.create(username: 'Maria', full_name: 'Maria Sarro') }
   let(:subject) { described_class.new(follower_id: test_follower.id, followed_id: test_followed.id) }
 
