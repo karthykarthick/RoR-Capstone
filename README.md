@@ -1,86 +1,116 @@
-# Ruby on Rails Course
+# Ruby Capstone
 
-This is the **GitHub Actions configuration**. If you are looking for the **Stickler configuration**, you can find it [here](https://github.com/microverseinc/linters-config/tree/Stickler/ror).
+#### Hello there! This is my Twitter Redesign project. The purpose of this project is to create a MVP of [this](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details) Twitter redesign.
+
+#### Features
+- Create an account and login with `username`
+- Follow other users;
+- Upload profile photo and cover image;
+- See someone's profile, with:
+- All their posts;
+- Information about the number of posts, followers and following;
+- Extra: Filter Users index, by the user `full_name`.
+
+#### Screenshot
+
+![screenshot](app/assets/images/screenshot.png)
+
+#### Livedemo
+- [Heroku](https://damp-temple-33000.herokuapp.com/)
+
+## Built With
+
+- [Ruby](https://www.ruby-lang.org)
+- [Rails](https://rubyonrails.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+## Gems
+- [Carrierwave](https://github.com/carrierwaveuploader/carrierwave/)
+- [Cloudinary](https://github.com/cloudinary/cloudinary_gem/)
+- [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner/)
+- [Rails Controller Testing](https://github.com/rails/rails-controller-testing/)
+- [Rubocop](https://github.com/rubocop-hq/rubocop/)
+- [RSpec Rails](https://github.com/rspec/rspec-rails/)
+- [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers/)
 
-## Set-up GitHub Actions
 
-This GitHub Action is going to run [Rubocop](https://docs.rubocop.org/en/stable/) and [Stylelint](https://stylelint.io/) to help you find style issues.
+## Getting started
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
+### Clone
 
-[Rubocop](https://docs.rubocop.org/en/stable/) is a Ruby static code analyzer (a.k.a. linter) and code formatter. It will enforce many of the guidelines outlined in the community [Ruby Style Guide](https://rubystyle.guide/).
-
-Please do the following **steps in this order**:
-
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
-
-![gh actions checks](../assets/images/gh-actions-rubocop-stylelint-checks.png)
-
-Click on the `Details` link to see the full output and the errors that need to be fixed:
-
-![gh actions failing checks](../assets/images/gh-actions-rubocop-failing-checks.png)
-
-## Set-up linters in your local env
-
-**Note**: The `npm` package manager is going to create a `node_modules` directory to install all of your dependencies. You shouldn't commit that directory. To avoid that, you can create a [`.gitignore`](https://git-scm.com/docs/gitignore) file and add `node_modules` to it:
+Clone repo with
 
 ```
-# .gitignore
-node_modules/
+git clone https://github.com/tadeuasarro/RoRCapstone.git
 ```
 
-### Rubocop
+### Setup
 
-1. Add `gem 'rubocop', '~>0.81.0'` to `Gemfile` (not sure how to use Gemfile? Read [this](https://bundler.io/v1.15/guides/bundler_setup.html)).
-2. Run `bundle install`.
-3. Copy [.rubocop.yml](./.rubocop.yml) to the root directory of your project
-4. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-5. Run `rubocop`.
-6. Fix linter errors.
-7. **IMPORTANT NOTE**: feel free to research [auto-correct options for Rubocop](https://rubocop.readthedocs.io/en/latest/auto_correct/) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+Install gems with:
 
-### Stylelint
+```
+bundle install
+```
 
-1. Run
+Setup database with:
+```
+   rails db:create
+   rails db:migrate
+```
 
-   ```
-   npm install --save-dev stylelint@13.3.x stylelint-scss@3.17.x stylelint-config-standard@20.0.x stylelint-csstree-validator
-   ```
+### Usage
 
-   (not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
+Start server with:
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your tem - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run
-   ```
-   npx stylelint "**/*.{css,scss}"
-   ```
-   on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+```
+    rails server
+```
 
-## RSpec/Heroku Actions
+Open `http://localhost:3000/` in your browser.
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+### Run tests
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+```
+    bundle exec rspec
+```
 
-- [GitHub Actions with Ruby on Rails: Setting up Continuous Integration](https://gorails.com/episodes/github-actions-continuous-integration-ruby-on-rails)
-- [Deploying to Heroku from GitHub Actions](https://dev.to/heroku/deploying-to-heroku-from-github-actions-29ej)
-- [Building a Rails CI pipeline with GitHub Actions](https://boringrails.com/articles/building-a-rails-ci-pipeline-with-github-actions/)
-- [Github Actions to run Rubocop and RSpec tests on Rails with Postgres](https://dev.to/abdellani/github-actions-to-run-rubocop-and-rspec-tests-on-rails-with-postgres-47i)
 
-## Troubleshooting
+## Authors
 
-- If you are building an API only Rails application
-For API only Rails application you can remove the Stylelint config. To do so remove line no. [23](https://github.com/microverseinc/linters-config/blob/f0c812753d0418288c404ed4a441a2e7370e9f4e/ror/.github/workflows/linters.yml#L23) to [36](https://github.com/microverseinc/linters-config/blob/f0c812753d0418288c404ed4a441a2e7370e9f4e/ror/.github/workflows/linters.yml#L36) from the [linter.yml]((https://github.com/microverseinc/linters-config/blob/master/ror/.github/workflows/linters.yml)) file.
+👤 The design belongs to this guy:
+- [Gregoire Vella](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+
+👤 This is me:
+
+- [Tadeu A Sarro](https://tadeuasarro.web.app)
+
+
+## Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/tadeuasarro/RoRCapstone/issues)
+
+
+## Show your support
+
+Give a star if you like this project!
+
+
+## Acknowledgments
+
+- Carrierwave
+- Cloudinary
+- Database Cleaner
+- Gregoire Vella
+- Microverse
+- Rails Controller Testing
+- Rubocop
+- RSpec Rails
+- Shoulda Matchers
+
+
+## 📝 License
+
+This project is MIT licensed.
