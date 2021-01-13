@@ -1,63 +1,51 @@
-# Ruby Capstone
+# Scaffold for social media app with Ruby on Rails
 
-#### Hello there! This is my Twitter Redesign project. The purpose of this project is to create a MVP of [this](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details) Twitter redesign.
-
-#### Features
-- Create an account and login with `username`
-- Follow other users;
-- Upload profile photo and cover image;
-- See someone's profile, with:
-- All their posts;
-- Information about the number of posts, followers and following;
-- Extra: Filter Users index, by the user `full_name`.
-
-#### Screenshot
-
-![screenshot](app/assets/images/screenshot.png)
-
-#### Livedemo
-- [Heroku](https://damp-temple-33000.herokuapp.com/)
+> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
 ## Built With
 
-- [Ruby](https://www.ruby-lang.org)
-- [Rails](https://rubyonrails.org/)
-- [PostgreSQL](https://www.postgresql.org/)
+- Ruby v2.7.0
+- Ruby on Rails v5.2.4
+
+## Live Demo
+
+TBA
 
 
-## Gems
-- [Carrierwave](https://github.com/carrierwaveuploader/carrierwave/)
-- [Cloudinary](https://github.com/cloudinary/cloudinary_gem/)
-- [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner/)
-- [Rails Controller Testing](https://github.com/rails/rails-controller-testing/)
-- [Rubocop](https://github.com/rubocop-hq/rubocop/)
-- [RSpec Rails](https://github.com/rspec/rspec-rails/)
-- [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers/)
+## Getting Started
 
+To get a local copy up and running follow these simple example steps.
 
-## Getting started
+### Prerequisites
 
-### Clone
-
-Clone repo with
-
-```
-git clone https://github.com/tadeuasarro/RoRCapstone.git
-```
+Ruby: 2.6.3
+Rails: 5.2.3
+Postgres: >=9.5
 
 ### Setup
 
-Install gems with:
+Instal gems with:
 
 ```
 bundle install
 ```
 
 Setup database with:
+
 ```
    rails db:create
    rails db:migrate
 ```
+
+### Github Actions
+
+To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
+
+1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
+2. Create the `feature/branch` and push.
+3. Start working on your milestone as usual.
+4. Open a PR from the `feature/branch` when your work is done.
+
 
 ### Usage
 
@@ -72,45 +60,33 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    bundle exec rspec
+    rpsec --format documentation
 ```
 
+> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
+
+### Deployment
+
+TBA
 
 ## Authors
 
-👤 The design belongs to this guy:
-- [Gregoire Vella](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+TBA
 
-👤 This is me:
-
-- [Tadeu A Sarro](https://tadeuasarro.web.app)
-
-
-## Contributing
+## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/tadeuasarro/RoRCapstone/issues)
-
+Feel free to check the [issues page](issues/).
 
 ## Show your support
 
-Give a star if you like this project!
-
+Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Carrierwave
-- Cloudinary
-- Database Cleaner
-- Gregoire Vella
-- Microverse
-- Rails Controller Testing
-- Rubocop
-- RSpec Rails
-- Shoulda Matchers
-
+TBA
 
 ## 📝 License
 
-This project is MIT licensed.
+TBA
