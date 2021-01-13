@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_login, only: [:index]
+  before_action :require_login, only: %i[index new create]
 
   def index
     @post = Post.new
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: 'Post created!'
     else
-      redirect_to root_path, notice: 'Something went wrong, please try again!'
+      redirect_to root_path, notice: "#{@post.errors.first.first.capitalize} #{@post.errors.first.last}."
     end
   end
 
@@ -24,11 +24,10 @@ class PostsController < ApplicationController
   end
 
   def gather_posts
-    result = Post.where(user: current_user.followeds).to_a
-    result.sort! { |x, y| y.created_at <=> x.created_at }
+    Post.where(user: current_user.followeds).includes([:user]).order('created_at DESC').to_a
   end
 
   def gather_suggestions
-    (User.all {} - current_user.followeds {})
+    (User.all.order('created_at DESC') {} - current_user.followeds {})
   end
 end
