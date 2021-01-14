@@ -23,4 +23,3 @@ test:
 production:
   adapter: postgresql
   database: postgres_production
-
