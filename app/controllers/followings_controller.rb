@@ -1,13 +1,11 @@
 class FollowingsController < ApplicationController
-  before_action :require_login, only: %i[create destroy]
   def create
     following = Following.new(following_params)
 
     if following.save
       redirect_to params[:following][:route], notice: "You're following that person!"
     else
-      message = @user.errors.first
-      redirect_to params[:following][:route], notice: "#{message.first.capitalize} #{message.last}."
+      redirect_to params[:following][:route], notice: 'Something went wrong, please try again!'
     end
   end
 

@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :require_logout, only: %i[new create]
-  before_action :require_login, only: [:destroy]
+  before_action :require_logout, only: [:new]
 
   def new
     @user = User.new
@@ -19,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to new_session_path, notice: 'Logged out!'
+    redirect_to new_session_url, notice: 'Logged out!'
   end
 end
