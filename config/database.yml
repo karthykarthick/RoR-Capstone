@@ -12,7 +12,6 @@ default: &default
 development:
   adapter: postgresql
   database: postgres_development
- 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,9 +19,7 @@ development:
 test:
   adapter: postgresql
   database: postgres_test
- 
 
 production:
   adapter: postgresql
   database: postgres_production
- `
