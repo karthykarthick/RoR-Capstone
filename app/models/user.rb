@@ -1,9 +1,7 @@
 # :nodoc:
 class User < ApplicationRecord
   validates :username,
-  validates :full_name, presence: true, length: { minimum: 6, maximum: 30 }	            presence: true,
-            uniqueness: true,
-            length: { minimum: 4, maximum: 15 }
+  validates :full_name, presence: true, length: { minimum: 6, maximum: 30 } presence: true, uniqueness: true, length: { minimum: 4, maximum: 15 }
 
   validates :full_name,
             presence: true,
