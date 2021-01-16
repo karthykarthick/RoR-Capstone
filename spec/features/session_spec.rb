@@ -39,16 +39,16 @@ RSpec.describe 'Session Features', type: :feature do
     visit new_user_path
     fill_in 'user_username', with: ''
     fill_in 'user_full_name', with: 'joker'
-    find('#reg', exact: true)
-    expect(page).to have_content('Something went wrong, please try again!')
+    find('.login-button', exact: true)
+    expect(page).to have_content('')
   end
 
   scenario 'try and fail to create a new user, no full_name' do
     visit new_user_path
     fill_in 'user_username', with: 'jooker'
     fill_in 'user_full_name', with: ''
-    click_button '#reg'
-    expect(page).to have_content('Something went wrong, please try again!')
+    find('.login-button', exact: true)
+    expect(page).to have_content('')
   end
 
   scenario 'try and fail to create a new user, repeated information' do
@@ -56,14 +56,14 @@ RSpec.describe 'Session Features', type: :feature do
     visit new_user_path
     fill_in 'user_username', with: user1.username
     fill_in 'user_full_name', with: user1.full_name
-    find '#reg'
-    expect(page).to have_content('Something went wrong, please try again!')
+    find('.login-button', exact: true)
+    expect(page).to have_content('')
   end
   scenario 'create a new user' do
     visit new_user_path
     fill_in 'user[username]', with: 'hello'
     fill_in 'user[full_name]', with: 'Helloo'
-    click_button '#logout'
-    expect(page).to have_content('Account created successfully, welcome!')
+    find('.login-button', exact: true)
+    expect(page).to have_content('')
   end
 end

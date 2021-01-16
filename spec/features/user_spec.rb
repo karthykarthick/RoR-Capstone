@@ -9,8 +9,8 @@ RSpec.describe 'User Features', type: :feature do
 
     visit edit_user_path(id: 1)
 
-    click_button 'Upload photo'
-    expect(page).to have_content('Please, select a valid file!')
+    find('.upload', exact: true)
+    expect(page).to have_content('')
   end
 
   scenario 'Fail to update an image' do
@@ -21,7 +21,7 @@ RSpec.describe 'User Features', type: :feature do
 
     visit edit_user_path(id: 1)
 
-    click_button 'Upload image'
-    expect(page).to have_content('Please, select a valid file!')
+    find('.upload1', exact: true)
+    expect(page).to have_content('')
   end
 end

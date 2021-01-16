@@ -11,7 +11,7 @@
             <%= form_for(@user, action: 'update') do |u| %>
               <div class="d-flex">
                 <%= u.file_field :photo, class: "post-input border py-2" %>
-                <%= u.submit 'Upload photo', class: 'post-button py-2 text-white' %>
+                <%= u.submit 'Upload photo', class: 'post-button py-2 text-white upload' %>
               </div>
             <% end %>
           </div>
@@ -20,7 +20,7 @@
             <%= form_for(@user, action: 'update') do |u| %>
               <div class="d-flex">
                 <%= u.file_field :cover_image, class: "post-input border py-2" %>
-                <%= u.submit 'Upload image', class: 'post-button py-2 text-white' %>
+                <%= u.submit 'Upload image', class: 'post-button py-2 text-white upload1' %>
               </div>
             <% end %>
           </div>
