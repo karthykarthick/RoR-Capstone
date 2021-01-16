@@ -87,6 +87,12 @@ Open `http://localhost:3000/` in your browser.
     bundle exec rspec
 ```
 
+### Issues
+
+```
+(https://github.com/karthykarthick/RoR-Capstone/issues)
+
+```
 
 ## Authors
 
