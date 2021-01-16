@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = gather_posts
   end
 
   def new
@@ -23,7 +24,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to posts_path, notice: @user.photo.to_s
     else
-      redirect_to new_user_path, notice: 'Something went wrong, please try again!'
+      errors = @user.errors.first
+      redirect_to new_user_path, notice: "#{errors.first.capitalize} #{errors.last}."
     end
   end
 
@@ -56,5 +58,9 @@ class UsersController < ApplicationController
   def create_following(user)
     following = Following.new(follower_id: user.id, followed_id: user.id)
     following.save
+  end
+
+  def gather_posts
+    @user.posts.includes([:user]).order('created_at DESC').to_a
   end
 end
