@@ -22,9 +22,9 @@
 
 ![screenshot](app/assets/images/ER.png)
 
-#### Vedio Presentation
+#### Video Presentation
 
-- [Vedio](https://www.loom.com/share/54e688d3d75a433ba3977665e8f02d7f)
+- [Video](https://www.loom.com/share/54e688d3d75a433ba3977665e8f02d7f)
 
 
 #### Livedemo
