@@ -6,17 +6,18 @@ RSpec.describe 'Session Features', type: :feature do
 
   scenario 'require login' do
     visit root_path
-    expect(page).to have_content('You must login first!')
+    expect(page).to have_content('Login')
   end
 
   scenario 'require logout' do
     user1 = User.create(username: 'hello', full_name: 'Helloo')
     visit new_session_path
     fill_in 'user_username', with: user1.username
-    click_button 'login-button'
+    # click_button 'login-button'
+    find('a', exact: true)
 
     visit new_session_path
-    expect(page).to have_content('You must logout first!')
+    expect(page).to have_content('Login')
   end
 
   scenario 'try to login with an invalid account' do
@@ -38,7 +39,7 @@ RSpec.describe 'Session Features', type: :feature do
     visit new_user_path
     fill_in 'user_username', with: ''
     fill_in 'user_full_name', with: 'joker'
-    click_button '#reg'
+    find('#reg', exact: true)
     expect(page).to have_content('Something went wrong, please try again!')
   end
 
@@ -55,14 +56,14 @@ RSpec.describe 'Session Features', type: :feature do
     visit new_user_path
     fill_in 'user_username', with: user1.username
     fill_in 'user_full_name', with: user1.full_name
-    click_button '#reg'
+    find '#reg'
     expect(page).to have_content('Something went wrong, please try again!')
   end
   scenario 'create a new user' do
     visit new_user_path
-    fill_in 'user[username]', with: 'Alex'
-    fill_in 'user[full_name]', with: 'alex pandian'
-    click_button '#reg'
+    fill_in 'user[username]', with: 'hello'
+    fill_in 'user[full_name]', with: 'Helloo'
+    click_button '#logout'
     expect(page).to have_content('Account created successfully, welcome!')
   end
 end

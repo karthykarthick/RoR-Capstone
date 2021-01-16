@@ -2,7 +2,7 @@
   <a href="/posts" class="h1 text-light text-center h-100 mb-0"><i class="fab fa-twitter"></i></a>
   <div class="d-flex align-items-center">
     <a href="/users" class="text-dark ml-4"><i class="fas fa-search"></i></a>
-    <a href="/sessions/<%= session[:user_id] %>" data-method="delete" class="text-dark ml-4">
+    <a href="/sessions/<%= session[:user_id] %>" data-method="delete" class="text-dark ml-4 logout" id="logout">
       <i class="fas fa-sign-out-alt"></i>
     </a>
   </div>
