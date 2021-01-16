@@ -28,7 +28,8 @@
 
 
 #### Livedemo
-- [Heroku](https://ancient-wave-83986.herokuapp.com/)
+
+[Heroku](https://ancient-wave-83986.herokuapp.com/)
 
 ## Built With
 
@@ -101,7 +102,7 @@ Open `http://localhost:3000/` in your browser.
 
 👤 This is me:
 
-# Karthick 
+     Karthick 
 
 
 ## Contributing
@@ -129,6 +130,6 @@ Give a star if you like this project!
 
 ## 📝 License
 
--[License](LICENSE)
+[License](LICENSE)
 
 This project is MIT licensed.
