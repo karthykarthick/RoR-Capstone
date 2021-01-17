@@ -13,7 +13,6 @@ RSpec.describe 'Session Features', type: :feature do
     user1 = User.create(username: 'hello', full_name: 'Helloo')
     visit new_session_path
     fill_in 'user_username', with: user1.username
-    # click_button 'login-button'
     find('a', exact: true)
 
     visit new_session_path

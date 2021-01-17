@@ -1,6 +1,6 @@
 # README
 
-# Ruby Capstone
+# Twitter Redesign -  Rails Capstone
 
 #### Hello there! This is my Twitter Redesign project. The purpose of this project is to create a MVP of [this](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details) Twitter redesign.
 
@@ -97,13 +97,11 @@ Open `http://localhost:3000/` in your browser.
 
 ## Authors
 
-👤 The design belongs to this guy:
-- [Gregoire Vella](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+👤 **karthick harimoorthy**
 
-👤 This is me:
+- Github: [@karthykarthick](https://github.com/karthykarthick)
 
-     Karthick 
-
+- Linkedin: [karthick-harimoorthy](https://www.linkedin.com/in/karthick-harimoorthy/)
 
 ## Contributing
 
@@ -126,6 +124,9 @@ Give a star if you like this project!
 - Rubocop
 - RSpec Rails
 - Shoulda Matchers
+
+👤 The design belongs to this guy:
+- [Gregoire Vella](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
 
 
 ## 📝 License
