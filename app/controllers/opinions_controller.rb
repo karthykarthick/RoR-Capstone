@@ -67,20 +67,20 @@ class OpinionsController < ApplicationController
     route = params[:route]
     current_opinion = Opinion.find_by(id: params[:opinion])
     current_voter = User.find_by(id: params[:voter])
-
-    if vote_direction == 'up'
+    case vote_direction
+    when 'up'
       current_opinion.votes.create(voter_id: current_voter.id,
                                    vote_type: 'up')
-    elsif vote_direction == 'down'
+    when 'down'
       current_opinion.votes.create(voter_id: current_voter.id,
                                    vote_type: 'down')
     end
-
     respond_to do |format|
-      if route == 'opinions'
+      case route
+      when 'opinions'
         format.html { redirect_to opinions_url, notice: 'The vote is updated' }
         format.json { head :no_content }
-      elsif route == 'user_profile'
+      when 'user_profile'
         format.html { redirect_to user_path(current_opinion.user.id), notice: 'The vote is updated' }
         format.json { head :no_content }
       end

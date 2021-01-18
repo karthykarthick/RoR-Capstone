@@ -68,9 +68,10 @@ module UsersHelper
   end
 
   def get_title(flag)
-    if flag == 'followers'
+    case flag
+    when 'followers'
       'Followers'
-    elsif flag == 'followed_users'
+    when 'followed_users'
       'Followed users'
     end
   end
@@ -81,7 +82,7 @@ module UsersHelper
     content_tag :div, nil, class: 'd-flex flex-row' do
       if user.errors.any?
         concat content_tag :h2,
-                           pluralize(user.errors.count, 'error') + ' prohibited this user from being saved:',
+                           "#{pluralize(user.errors.count, 'error')} prohibited this user from being saved:",
                            class: 'errors'
 
         content_tag (:ul), class: 'input_validations' do

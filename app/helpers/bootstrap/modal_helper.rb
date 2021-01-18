@@ -9,15 +9,13 @@ module Bootstrap::ModalHelper
     content_tag(:a, text, options)
   end
 
-  def modal(options = {})
+  def modal(options = {}, &block)
     options = canonicalize_options(options)
     options.key?(:id) or raise(ArgumentError, 'missing :id option')
     options = ensure_class(options, %w[modal fade])
     content_tag(:div, options) do
       content_tag(:div, class: 'modal-dialog', role: :document) do
-        content_tag(:div, class: 'modal-content') do
-          yield
-        end
+        content_tag(:div, class: 'modal-content', &block)
       end
     end
   end

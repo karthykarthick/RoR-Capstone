@@ -6,9 +6,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     login_required
-    if params[:flag] == 'followers'
+    case params[:flag]
+    when 'followers'
       @all_spesific_users = @user.followers.includes(:opinions)
-    elsif params[:flag] == 'followed_users'
+    when 'followed_users'
       @all_spesific_users = @user.followeds.includes(:opinions)
     end
     @flag = params[:flag]
