@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require bootstrap
+ *= require_self
+ */
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+.all-info {
+  //height: -webkit-calc(100vh);
+  //height: -moz-calc(100vh);
+  //height: calc(100vh);
+}
+
+.login_signup_form_wrapper {
+  margin: 50px auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.top_navbar {
+  background: #51a6e7;
+  height: 41px;
+}
+
+.top_border {
+  border-top-style: solid;
+  border-top-color: #d5d6d8;
+}
+
+.bottom_border {
+  border-bottom-style: solid;
+  border-bottom-color: #d5d6d8;
+}
+
+.left_sidebar {
+  background: #223346;
+}
+
+.content {
+  background: #fff;
+}
+
+.left_border {
+  border-left-style: solid;
+  border-left-color: #d5d6d8;
+}
+
+.right_sidebar {
+  border-left-style: solid;
+  border-left-color: #d5d6d8;
+  background: #f5f6f8;
+}
+
+.write_tweet {
+  margin: 0 auto;
+  background: #fff;
+}
+
+.fullname-in-right-sidebar {
+  width: 150px;
+}
+
+.hide-icon {
+  opacity: 0;
+}
+
+li {
+  display: inline;
+  font-size: 25px;
+}
+
+.input_validations li {
+  display: inline-block;
+  color: #b33000;
+  font-size: 25px;
+  padding: 4px 0;
+}
+
+.text-black-30 {
+  color: #cacbcd;
+}
+
+.vote_container {
+  width: 40px;
+}
+
+a:hover {
+  background: #a2a2a2;
+  border-radius: 3%;
+  color: #fff;
+  text-decoration: none;
+}
+
+.left_sidebar_links h2 a:hover {
+  background: #a2a2a2;
+  padding: 0 50px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.right-sidebar-user-info {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+}

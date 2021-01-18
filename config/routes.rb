@@ -1,10 +1,17 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  root to: 'posts#index'
+  resources :followings, only: [:new, :create, :destroy]
+  resources :opinions, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :users, only: [:index, :edit, :show, :new, :create, :update, :destroy]
 
-  resources :users, except: [:delete]
-  resources :posts, only: [:index, :new, :create]
+  root "opinions#index"
+
   resources :sessions, only: [:new, :create, :destroy]
-  resources :followings, only: [:create, :destroy]
+
+  get "signup", to: "users#new", as: "signup"
+  get "login", to: "sessions#new", as: "login"
+  get "logout", to: "sessions#destroy", as: "logout"
+
+  get "vote", to: "opinions#update_vote", as: "vote"
+
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

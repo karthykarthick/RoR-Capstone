@@ -1,16 +1,28 @@
-# :nodoc:
 class User < ApplicationRecord
-  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 15 }
-  validates :full_name, presence: true, length: { minimum: 6, maximum: 30 }
+  has_many :opinions, foreign_key: :authorId, dependent: :destroy
 
-  has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_many :follower_users, class_name: 'Following', foreign_key: :followedId, dependent: :destroy
+  has_many :followers, through: :follower_users
 
-  has_many :followed_relations, class_name: 'Following', foreign_key: :followed_id, dependent: :destroy
-  has_many :followers, through: :followed_relations
+  has_many :followed_users, class_name: 'Following', foreign_key: :followerId, dependent: :destroy
+  has_many :followeds, through: :followed_users
 
-  has_many :follower_relations, class_name: 'Following', foreign_key: :follower_id, dependent: :destroy
-  has_many :followeds, through: :follower_relations
+  validates :username, presence: true
+  validates :fullname, presence: true
+  has_attached_file :photo,
+                    styles: { medium: '300x300>',
+                              thumb: '100x100>' },
+                    default_url: '/images/:style/missing.png',
+                    storage: :cloudinary,
+                    path: ':id/:style/:filename'
+  validates_attachment_content_type :photo, content_type: %r{\Aimage/.*\z}
 
-  mount_uploader :photo, PhotoUploader
-  mount_uploader :cover_image, CoverImageUploader
+  has_attached_file :cover_image, styles: { medium: '300x300>',
+                                            thumb: '100x100>' },
+                                  default_url: '/images/:style/missing.png',
+                                  storage: :cloudinary,
+                                  path: ':id/:style/:filename'
+  validates_attachment_content_type :cover_image, content_type: %r{\Aimage/.*\z}
+
+  has_many :votes, class_name: 'Vote', foreign_key: :voter_id, dependent: :destroy
 end

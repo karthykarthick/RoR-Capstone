@@ -1,0 +1,9 @@
+<div class="d-flex w-100">
+  <%= form_with(model: opinion, local: true , class: "w-100") do |form| %>
+
+    <div class="field">
+      <%= form.text_field :text, :class => "form-control write_tweet", :placeholder => "WRITE YOUR OPINION AND PRESS ENTER" %>
+    </div>
+  <% end %>
+
+</div>
