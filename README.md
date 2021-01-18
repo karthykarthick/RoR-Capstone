@@ -6,9 +6,8 @@ In the project, I built a full-stack application on Ruby on Rails which is a bas
 on a redesign of Twitter. I followed the [given design of the website](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details), 
 but personalized the content and introduced voting to the tweets ( or opinions ). 
 
-![homepace screenshot](./doc/images/screenshot.png)
+![homepace screenshot](./doc/images/screenshot1.png)
 Homepage
-
 
 ## MVP version of the app
 I followed a user journey to build the following **MVP version** of the app:
@@ -51,10 +50,10 @@ I followed a user journey to build the following **MVP version** of the app:
 
 
 ## Live Demo
-- [Live demo link with Heroku]()
+- [Live demo link with Heroku](https://damp-depths-99342.herokuapp.com/login)
 
 ## Video presentation
-
+https://www.loom.com/share/7609ef4e323e4be1a30eda38debee45f
 
 ## Getting Started
 

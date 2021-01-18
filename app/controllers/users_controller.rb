@@ -6,9 +6,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     login_required
-    if params[:flag] == 'followers'
+    case params[:flag]
+    when 'followers'
       @all_spesific_users = @user.followers.includes(:opinions)
-    elsif params[:flag] == 'followed_users'
+    when 'followed_users'
       @all_spesific_users = @user.followeds.includes(:opinions)
     end
     @flag = params[:flag]
@@ -86,5 +87,9 @@ class UsersController < ApplicationController
   # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:username, :fullname, :photo, :cover_image)
+  end
+
+  def gather_posts
+    @user.posts.includes([:user]).order('created_at DESC').to_a
   end
 end
