@@ -1,21 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Following, type: :model do
-  let(:test_follower) { User.create(username: 'Tadeu', full_name: 'Tadeu Sarro') }
-  let(:test_followed) { User.create(username: 'Maria', full_name: 'Maria Sarro') }
-  let(:subject) { described_class.new(follower_id: test_follower.id, followed_id: test_followed.id) }
+  let(:test_follower) { User.create(username: 'ramin', fullname: 'Ramin Mammadzada') }
+  let(:test_followed_user) { User.create(username: 'nimoto', fullname: 'Nimoto Mammadzada') }
+  let(:test_following) { described_class.new(followerId: test_follower.id, followedId: test_followed_user.id) }
 
   describe 'validations' do
-    it 'is valid, because both users actually exist' do
-      expect(subject).to be_valid
+    it 'should be valid, because both users actually exist' do
+      expect(test_following).to be_valid
     end
-    it "is invalid, because the follower doesn't exist" do
-      subject.followed_id = -1
-      expect(subject).not_to be_valid
+    it "should be invalid, because the follower doesn't exist" do
+      test_following.followedId = -1
+      expect(test_following).to be_invalid
     end
-    it "is invalid, because the followed doesn't exist" do
-      subject.follower_id = -1
-      expect(subject).not_to be_valid
+    it "should be invalid, because the followed doesn't exist" do
+      test_following.followerId = -1
+      expect(test_following).to be_invalid
     end
   end
 

@@ -1,0 +1,37 @@
+<div class="container px-0">
+
+  <div class="pt-5 d-flex flex-column align-items-center">
+    <div class="d-flex align-items-center flex-column">
+      <div class="d-flex flex-row align-items-center justify-content-between right-sidebar-user-info">
+        <%= follow_button(@user) %>
+        <%= image_tag @user.photo.url(:thumb), :class => "rounded-circle" %>
+        <%= settings_button(@user) %>
+      </div>
+      <h3 class="mx-3"><%= @user.fullname %></h3>
+      <p class="mx-3">@<%= @user.username %></p>
+    </div>
+
+    <div class="d-flex my-3 bottom_border top_border">
+      <div class="d-flex flex-column align-items-center just-items-center pl-2 pr-2 ">
+        <h4><%= @user.opinions.size %></h4>
+        <h5>tweets</h5>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center pl-2 pr-2 left_border">
+        <h4><%= @user.followeds.size %></h4>
+        <h5>followed</h5>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center pl-2 pr-2 left_border">
+        <h4><%= @user.followers.size %></h4>
+        <h5>followers</h5>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center justify-content-center my-3">
+      <h6>FOLLOWED BY</h6>
+    </div>
+
+    <%= render 'users/user_list', users: get_all_followers(@user) %>
+  </div>
+
+</div>
+

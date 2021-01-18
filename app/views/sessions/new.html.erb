@@ -1,23 +1,27 @@
-<div class="container-fluid">
-  <div class="d-flex justify-content-center">
-    <div class="w-50 pt-5">
-      <%= form_for(@user, url: sessions_path, method: 'post') do |f| %>
-        <div class="form-group p-3 mb-0">
-          <p class="h1 text-dark text-center"><i class="fab fa-twitter"></i></p>
-          <p class="h4 text-dark text-center">Login</p>
-          <div>
-            <%= f.label :username, class: 'form-text text-secondary' %>
-            <%= f.text_field :username, autofocus: true, class: 'form-control' %>
-          </div>
-          <div class="mt-3">
-            <%= f.submit 'Login', class: 'login-button' %>
-          </div>
-        </div>
-        <div class="d-flex justify-content-end align-items-center">
-          <small class="text-dark mr-1">Not registered?</small>
-          <%= link_to 'Sign up', new_user_path, class: 'no-link mr-3' %>
-        </div>
-      <% end %>
+<div class="login_signup_form_wrapper">
+  <div class="container">
+
+    <div class="d-flex flex-column align-items-center">
+      <i class="fab fa-twitter fa-2x ml-4 text-primary"></i>
+      <h1>Login</h1>
     </div>
+
+
+    <p id="alert"><%= alert %></p>
+    <%= form_tag sessions_path do |form| %>
+      <div class="field">
+        <%= text_field_tag :username , "", :class => "form-control", :placeholder => "your username"%>
+      </div>
+
+      <div class="d-flex justify-content-between row">
+        <div class="actions mx-3">
+          <%= submit_tag "login", :class => "btn btn-primary"%>
+        </div>
+        <div class="actions mx-3">
+          <%= link_to "Sign Up", signup_url, :class => "btn btn-primary text-light" %>
+        </div>
+      </div>
+    <% end %>
   </div>
+
 </div>

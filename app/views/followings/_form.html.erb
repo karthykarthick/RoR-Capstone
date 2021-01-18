@@ -1,0 +1,17 @@
+<%= form_with(model: following, local: true) do |form| %>
+  <%= display_errors(following) %>
+
+  <div class="field">
+    <%= form.label :followerId %>
+    <%= form.number_field :followerId %>
+  </div>
+
+  <div class="field">
+    <%= form.label :followedId %>
+    <%= form.number_field :followedId %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
