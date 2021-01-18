@@ -51,10 +51,10 @@ I followed a user journey to build the following **MVP version** of the app:
 
 
 ## Live Demo
-- [Live demo link with Heroku]()
+- [Live demo link with Heroku](https://damp-depths-99342.herokuapp.com/login)
 
 ## Video presentation
-
+https://www.loom.com/share/7609ef4e323e4be1a30eda38debee45f
 
 ## Getting Started
 
